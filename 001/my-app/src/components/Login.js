@@ -1,10 +1,9 @@
 function Login () {
 	return (
 		<div className="login">
-			<label htmlFor="login__checkbox" className="login__label"></label>
-			<input type="checkbox" className="login__checkbox" name="login__checkbox" id="login__checkbox" />
-			<form className="login__form">
-				<button className="login__form-close">+</button>
+			<button className='login__showform-button' onClick={showForm}></button>
+			<form className="login__form hidden">
+				<button className="login__form-close" onClick={hideForm}>+</button>
 				<p className="login__form-text">login</p>
 				<input type="text" className="login__input" />
 				<p className="login__form-text">password</p>
@@ -16,6 +15,25 @@ function Login () {
 			</form>
 		</div>
 	)
+}
+
+function showForm (e) {
+	e.preventDefault();
+	const form = document.querySelector('.login__form');
+	const button = document.querySelector('.login__showform-button');
+
+	form.classList.toggle('hidden');
+	button.classList.toggle('hidden');
+}
+
+function hideForm (e) {
+	e.preventDefault();
+
+	const form = document.querySelector('.login__form');
+	const button = document.querySelector('.login__showform-button');
+
+	form.classList.toggle('hidden');
+	button.classList.toggle('hidden');
 }
 
 export default Login;

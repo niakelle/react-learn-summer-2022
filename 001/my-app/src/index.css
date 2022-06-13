@@ -10,6 +10,10 @@ body {
   background-size: cover;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -133,29 +137,32 @@ code {
 
 .login {
   box-sizing: border-box;
+
+  border-radius: 50%;
+}
+
+.login__showform-button {
+  box-sizing: border-box;
   position: fixed;
   bottom: 50px;
   right: 80px;
   width: 40px;
   height: 40px;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.login__label {
-  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.4);
   display: block;
-  height: 100%;
-  width: 100%;
+  border-radius: 50%;
+  background-image: url('./img/icons/icons8-login-25.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 85%;
 }
 
-.login__label:hover {
-  background-color: rgb(217, 217, 217);
+.login__showform-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);;
   border-radius: 50%;
 }
 
 .login__form {
-  visibility: hidden;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -213,16 +220,4 @@ code {
   box-sizing: border-box;
   width: 220px;
   margin: 0 auto;
-}
-
-.login__checkbox {
-  visibility: hidden;
-}
-
-/* .login__checkbox:checked~.login__label {
-  visibility: hidden;
-} */
-
-.login__checkbox:checked~.login__form {
-  visibility: visible;
 }
